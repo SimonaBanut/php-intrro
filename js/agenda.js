@@ -1,4 +1,4 @@
-console.debug('loading agenda');
+console.debug('1) loading agenda');
 
 function getRow(person) {
     var firstname = person.firstname;
@@ -6,15 +6,18 @@ function getRow(person) {
     var row = '<tr><td>' + firstname + '</td><td>' + lastname + '</td><td>0723569874</td></tr>';
     return row;
 }
-var contacts = [
-    {firstname:'SimionS',lastname: 'Matei'},
-    {firstname:'Mocan', lastname:'Nicu'},
-    {firstname:'Hader',lastname: 'Ramona'}
-    //['popescu','elena'],
-    //['bighe','george']
-];
 
-for (var i = 0; i < contacts.length; i++) {
-    var person = contacts[i];
-    $('#agenda tbody').append(getRow(person));
+$.ajax({
+    url: "js/mocks/load-contacts.json"
+
+   }).done(function(dateleDePeServer) {
+    console.debug ('3)ajax done', dateleDePeServer);
+    showContacts(dateleDePeServer)
+});
+console.debug ('2) after ajax')
+function showContacts(contacts) {
+    for (var i = 0; i < contacts.length; i++) {
+        var person = contacts[i];
+        $('#agenda tbody').append(getRow(person));
+    }
 }
