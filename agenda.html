@@ -88,28 +88,24 @@
             <div id="breadcrumb">HOME : welcome home</div>
 
             <h1>Agenda</h1>
-
+            <form action="agenda.html" method="POST">
+                <input type="text" name='firstName' placeholder="Nume" required="required">
+                <input type="text" name="lastName" placeholder="Prenume">
+                <input type="text" name="phone" placeholder="telefon">
+                <button>Adauga</button>
+            </form>
+            <br>
                 <table id="agenda">
                     <thead>
                         <tr>
                             <th><b>Nume</b></th>
                             <th>Prenume</th>
                             <th>Telefon</th>
+                            <th width="100"></th>
                         </tr>
                      </thead>
-                <tbody>
-                <tr>
-                    <td>Banut</td>
-                    <td>Simona</td>
-                    <td>0756231456</td>
-                </tr>
-                <tr>
-                    <td>Tunab</td>
-                    <td>Elena</td>
-                    <td>0725639871</td>
-                </tr>
+                    <tbody></tbody>
 
-                </tbody>
                 </table>
             </div>
     </div>
