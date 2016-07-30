@@ -16,6 +16,8 @@ function getRow(person) {
 
 $.ajax({
     url: "js/mocks/load-contacts.json",
+    cache :false,
+        dataType : 'json',
     type: 'POST'
    }).done(function(contacts) {
     console.debug ('3)ajax done', contacts);
@@ -42,12 +44,15 @@ function editC(id){
         url: "js/mocks/load-contacts.json",
         type: 'POST'
             }).done(function(contacts) {
-        altcontact = id;
+        //altcontact = id;
         var personNew = contacts[id-1];
         console.debug (personNew);
+        //alert(personNew.firstName);
         $("input [name='firstName']").val(personNew.firstName);
+        alert(document.getElementById("firstName").value);
         $("input [name='lastName']").val(personNew.lastName);
         $("input [name='phone']").val(personNew.phone);
+        alert(personNew.firstName);
     });
 }
 

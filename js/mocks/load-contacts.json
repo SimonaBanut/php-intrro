@@ -1,6 +1,38 @@
 [
-  {"id": 1, "firstName":"Simion","lastName": "Matei","phone":"07452639789"},
-  {"id": 2, "firstName":"Mocan", "lastName":"Nicu", "phone":"0725896321"},
-  {"id": 3, "firstName":"Hader","lastName": "Ramona", "phone":"0758963210"}
-  
+    {
+        "id": 1,
+        "firstName": "Simion",
+        "lastName": "Matei",
+        "phone": "07452639789"
+    },
+    {
+        "id": 2,
+        "firstName": "Mocan",
+        "lastName": "Nicu",
+        "phone": "0725896321"
+    },
+    {
+        "id": 3,
+        "firstName": "Hader",
+        "lastName": "Ramona",
+        "phone": "0758963210"
+    },
+    {
+        "id": 4,
+        "firstName": "simona",
+        "lastName": "Lovin",
+        "phone": "0745563987"
+    },
+    {
+        "id": 5,
+        "firstName": "simona",
+        "lastName": "Lovin",
+        "phone": "0745563987"
+    },
+    {
+        "id": 6,
+        "firstName": "simona",
+        "lastName": "Lovin",
+        "phone": "0745563987"
+    }
 ]
