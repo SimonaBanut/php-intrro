@@ -15,7 +15,7 @@ function getRow(person) {
 }
 
 $.ajax({
-    url: "js/mocks/load-contacts.json",
+    url: "servlets/load-contacts.php",
     cache :false,
         dataType : 'json',
     type: 'POST'
@@ -26,8 +26,9 @@ $.ajax({
 
 function removeContact (id) {
     $.ajax({
-        url: "js/mocks/remove-contact.json",
+        url: "servlets/remove-contact.php",
         type: 'POST',
+        dataType : 'json',
         data: {
             id: id
         }
@@ -36,7 +37,6 @@ function removeContact (id) {
         showContacts(contacts);
     });
 }
-console.debug ('2) after ajax');
 
 var altcontact = '';
 function editC(id){
@@ -80,4 +80,5 @@ $('#agenda').on('click', 'button.editare', function(){
     console.info('edit this', this);
     editC(id);
 });
+
 

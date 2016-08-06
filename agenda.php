@@ -2,26 +2,30 @@
 
 <?php //Save contact if necessary
 if (isset($_POST["firstName"])) {
-    $filename = "js/mocks/load-contacts.json";//in acest fisier se tin datele
-    $allContactsStr = file_get_contents($filename);//iau jsonul din fis loadcontacts
-    $allContacts = json_decode($allContactsStr); //il transform intr-un array, decodez
+    //cu fisiere
+//    $filename = "js/mocks/load-contacts.json";//in acest fisier se tin datele
+//    $allContactsStr = file_get_contents($filename);//iau jsonul din fis loadcontacts
+//    $allContacts = json_decode($allContactsStr); //il transform intr-un array, decodez
+//
+//    $lastcontact = $allContacts[count($allContacts)-1];//aduce ultimul json ca sa ia ID-ul
+//
+//    echo "add firstname:" . $_POST["firstName"];
+//
+//    $newperson = array(
+//        "id" => $lastcontact->id +1,
+//        "firstName" => $_POST["firstName"],
+//        "lastName" => $_POST["lastName"],
+//        "phone" => $_POST["phone"]
+//    );
+////    echo "<br> ";
+////    echo json_encode($newperson);
+//
+//
+//    $allContacts[] = $newperson; //adaug linia noului membru
+//    file_put_contents($filename, json_encode($allContacts,JSON_PRETTY_PRINT)); //duc inapoi continutul in fisier
 
-    $lastcontact = $allContacts[count($allContacts)-1];//aduce ultimul json ca sa ia ID-ul
-
-    echo "add firstname:" . $_POST["firstName"];
-
-    $newperson = array(
-        "id" => $lastcontact->id +1,
-        "firstName" => $_POST["firstName"],
-        "lastName" => $_POST["lastName"],
-        "phone" => $_POST["phone"]
-    );
-//    echo "<br> ";
-//    echo json_encode($newperson);
-
-
-    $allContacts[] = $newperson; //adaug linia noului membru
-    file_put_contents($filename, json_encode($allContacts,JSON_PRETTY_PRINT)); //duc inapoi continutul in fisier
+    //cu date de baze - adaugare
+    include ("servlets/add-contacts.php");
 
 }
 ?>
@@ -33,7 +37,7 @@ if (isset($_POST["firstName"])) {
     <input type="text" id ="firstName" name="firstName" placeholder="Nume" required="required">
     <input type="text" name="lastName" placeholder="Prenume">
     <input type="text" name="phone" placeholder="telefon">
-    <button>Adauga</button>
+    <button>Adauga </button>
 </form>
 <br>
     <table id="agenda">
