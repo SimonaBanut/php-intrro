@@ -1,7 +1,17 @@
 <?php include ("header-tpl.php"); ?>
 
 <?php //Save contact if necessary
+
 if (isset($_POST["firstName"])) {
+    if (isset($_POST["id"])) {
+
+        include("servlets/edit-contacts.php");
+        echo "updated";
+    } else {
+        include("servlets/add-contacts.php");
+        echo "added";
+    }
+}
     //cu fisiere
 //    $filename = "js/mocks/load-contacts.json";//in acest fisier se tin datele
 //    $allContactsStr = file_get_contents($filename);//iau jsonul din fis loadcontacts
@@ -25,19 +35,21 @@ if (isset($_POST["firstName"])) {
 //    file_put_contents($filename, json_encode($allContacts,JSON_PRETTY_PRINT)); //duc inapoi continutul in fisier
 
     //cu date de baze - adaugare
-    include ("servlets/add-contacts.php");
 
-}
+
+
 ?>
 
 <div id="breadcrumb">HOME : welcome home</div>
 
 <h1>Agenda</h1>
 <form action="" method="POST">
+    <input type="hidden" name="id">
     <input type="text" id ="firstName" name="firstName" placeholder="Nume" required="required">
-    <input type="text" name="lastName" placeholder="Prenume">
-    <input type="text" name="phone" placeholder="telefon">
+    <input type="text" id ="lastName" name="lastName" placeholder="Prenume">
+    <input type="text" id ="phone"name="phone" placeholder="telefon">
     <button>Adauga </button>
+    <button class="update"> Update </button>
 </form>
 <br>
     <table id="agenda">
